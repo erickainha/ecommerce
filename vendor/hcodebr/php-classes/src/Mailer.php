@@ -3,14 +3,14 @@
 namespace Hcode;
 
 use Rain\Tpl;
-//use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
 
 class Mailer {
 
-	const USERNAME = "ericka.os@gmail.com";
-	const PASSWORD = "teste";
+	const USERNAME = "ericka.osilveira@gmail.com";
+	const PASSWORD = "Kinhaphp7";
 	const NAME_FROM = "Hcode";
 
 	private $mail;
@@ -43,7 +43,7 @@ $this->mail->isSMTP();
 // SMTP::DEBUG_OFF = off (for production use)
 // SMTP::DEBUG_CLIENT = client messages
 // SMTP::DEBUG_SERVER = client and server messages
-$this->mail->SMTPDebug = SMTP::DEBUG_OFF;
+$this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
 //Set the hostname of the mail server
 $this->mail->Host = 'smtp.gmail.com';
