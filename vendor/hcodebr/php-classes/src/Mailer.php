@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\SMTP;
 class Mailer {
 
 	const USERNAME = "ericka.osilveira@gmail.com";
-	const PASSWORD = "Kinhaphp7";
+	const PASSWORD = "2337";
 	const NAME_FROM = "Hcode";
 
 	private $mail;
