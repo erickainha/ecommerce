@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Hcode\\' => array($vendorDir . '/hcodebr/php-classes/src'),
+	'Hcode\\' => array($vendorDir . '/hcodebr/php-classes/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
 );
