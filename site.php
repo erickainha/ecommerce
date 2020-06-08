@@ -253,7 +253,7 @@ $app->post("/checkout", function(){
 
 	$order->save();
 
-	/*switch ((int)$_POST['payment-method']) {
+	switch ((int)$_POST['payment-method']) {
 
 		case 1:
 		header("Location: /order/".$order->getidorder()."/pagseguro");
@@ -264,7 +264,7 @@ $app->post("/checkout", function(){
 		break;
 
 	}
-	*/
+
 
 	exit;
 
@@ -566,7 +566,7 @@ $app->get("/boleto/:idorder", function($idorder){
 	$data_venc = date("d/m/Y", time() + ($dias_de_prazo_para_pagamento * 86400));  // Prazo de X dias OU informe data: "13/04/2006"; 
 
 	$valor_cobrado = formatPrice($order->getvltotal()); // Valor - REGRA: Sem pontos na milhar e tanto faz com "." ou "," ou com 1 ou 2 ou sem casa decimal
-	$valor_cobrado = formatPrice($order->getvltotal());
+	$valor_cobrado = str_replace(".", "",$valor_cobrado);
 	$valor_cobrado = str_replace(",", ".",$valor_cobrado);
 	$valor_boleto=number_format($valor_cobrado+$taxa_boleto, 2, ',', '');
 
