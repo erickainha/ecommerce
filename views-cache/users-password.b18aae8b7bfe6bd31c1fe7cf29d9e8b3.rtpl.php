@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -19,20 +19,20 @@
         <!-- /.box-header -->
         <!-- form start -->
 
-        {if="$msgError != ''"}
+        <?php if( $msgError != '' ){ ?>
         <div class="alert alert-danger alert-dismissible" style="margin:10px">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <p>{$msgError}</p>
+            <p><?php echo htmlspecialchars( $msgError, ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
         </div>
-        {/if}
-        {if="$msgSuccess != ''"}
+        <?php } ?>
+        <?php if( $msgSuccess != '' ){ ?>
         <div class="alert alert-success alert-dismissible" style="margin:10px">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <p>{$msgSuccess}</p>
+            <p><?php echo htmlspecialchars( $msgSuccess, ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
         </div>
-        {/if}
+        <?php } ?>
 
-        <form role="form" action="/admin/users/{$user.iduser}/password" method="post">
+        <form role="form" action="/admin/users/<?php echo htmlspecialchars( $user["iduser"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/password" method="post">
           <div class="box-body">
             <div class="form-group">
               <label for="despassword">Nova Senha</label>

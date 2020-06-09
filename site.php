@@ -21,6 +21,7 @@ $app->get('/', function() {
 
 });
 
+
 $app->get("/categories/:idcategory", function($idcategory){
 
 	$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
@@ -262,10 +263,7 @@ $app->post("/checkout", function(){
 		case 2:
 		header("Location: /order/".$order->getidorder()."/paypal");
 		break;
-
 	}
-
-
 	exit;
 
 });
